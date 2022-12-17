@@ -1,0 +1,23 @@
+{
+  "name": "roadtotriggerise",
+  "version": "1.0.0",
+  "description": "QA Challenge",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cy:run": "cypress run --config video=false --env allure=true",
+    "allure:generate": "allure generate allure-results",
+    "allure:open": "allure open allure-report",
+    "allure:clear": "rm -r allure-results/ allure-report || true",
+    "test": "npx npm-run-all allure:clear cy:run allure:generate allure:open"
+  },
+  "author": "Sandra Lourenço",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "cypress": "^12.1.0",
+    "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "chai-colors": "^1.0.1"
+  }
+}
