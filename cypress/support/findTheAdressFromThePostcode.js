@@ -5,6 +5,7 @@ Cypress.Commands.add("findTheAdressFromThePostcode", () => {
     .click();
   cy.url().should(
     "include",
-    "postalCodeSearch.jspx?request_locale=en#fndtn-addressSearchPanel"
+    "postalCodeSearch.jspx?request_locale=en/#fndtn-addressSearchPanel"
   );
 });
+

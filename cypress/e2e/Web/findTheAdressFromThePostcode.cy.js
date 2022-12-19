@@ -2,9 +2,7 @@
 
 describe(" Testing of 'Find the address from the postcode' tab", () => {
   beforeEach(() => {
-    cy.visit(
-      "https://www.ctt.pt/feapl_2/app/open/postalCodeSearch/postalCodeSearch.jspx?request_locale=en"
-    );
+    cy.visit("/");
   });
 
   it("TC1-Validate if “Find the postcode” tab page has a form present", () => {
