@@ -18,13 +18,13 @@ describe(" Testing of 'Find the address from the postcode' tab", () => {
     //3 - Validate if we have “Postcode” word in the “Find the address from the postcode” tab
     cy.get("label[for='cp4']").should("contain", "Postcode");
 
-    //4 - Validate if  “Search” button is present
+    //4 - Validate if  “Search” button is present and it's red
     cy.get("#buttonAddressSearch").contains("Search").should("be.visible");
     cy.get("#buttonAddressSearch")
       .should("have.css", "background-color")
       .and("be.colored", "#DF0024");
 
-    //5 - Validate if  “Clear” button is present
+    //5 - Validate if  “Clear” button is present and it's white
     cy.get("#addressSearchClear").should("have.value", "Clear");
     cy.get("#addressSearchClear")
       .should("have.css", "background-color")
@@ -50,9 +50,9 @@ describe(" Testing of 'Find the address from the postcode' tab", () => {
     //1 - Validate if we are in the page of the tab with title “Find the address from the postcode”
     cy.findTheAdressFromThePostcode();
 
-    //2 - In Postcode field type 4400 in the first box and 164 in the second
-    cy.get("#cp4").type("4400").should("have.value", "4400");
-    cy.get("#cp3").type("164").should("have.value", "164");
+    //2 - Type a valid postcode number in the first and second postcode field
+    cy.validPostcodeFirstField();
+    cy.validPostcodeSecondField();
 
     //3 - Click in the Search button
     cy.get("#buttonAddressSearch")
@@ -74,9 +74,9 @@ describe(" Testing of 'Find the address from the postcode' tab", () => {
     //1 - Validate if we are in the page of the tab with title “Find the address from the postcode”
     cy.findTheAdressFromThePostcode();
 
-    //2 - In Postcode field type xxxx in the first box and yyy in the second
-    cy.get("#cp4").type("xxxx").should("have.value", "xxxx");
-    cy.get("#cp3").type("yyy").should("have.value", "yyy");
+    //2 - Type a valid postcode in the first and second postcode field
+    cy.invalidPostcodeFirstField();
+    cy.invalidPostcodeSecondField();
 
     //3 - Click in the Search button
     cy.get("#buttonAddressSearch")

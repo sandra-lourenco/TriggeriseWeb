@@ -25,3 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 export { findThePostcode } from "./findThePostcode";
 export { findTheAdressFromThePostcode } from "./findTheAdressFromThePostcode";
+export { validPostcodeFirstField } from "./validPostcodeFirstField";
+export { validPostcodeSecondField } from "./validPostcodeSecondField";
+export { invalidPostcodeFirstField } from "./invalidPostcodeFirstField";
+export { invalidPostcodeSecondField } from "./invalidPostcodeSecondField";

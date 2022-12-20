@@ -18,20 +18,20 @@ describe(" Testing of 'Find the postcode' tab", () => {
         "Insert the character * (asterisk) before and / or after the street name to get all results with that name."
       );
 
-    //3 - Validate if we have “District”, “Region”, “Locality”, “Street”, “Door” words in the “Find the postcode” tab form
+    //3 - Validate if we have “District”, “Region”, “Locality”, “Street”, “Door” field names in the “Find the postcode” tab form
     cy.get("label[for='distritos']").should("have.text", "District");
     cy.get("label[for='concelhos']").should("have.text", "Region");
     cy.get("label[for='localidade']").should("have.text", "Locality");
     cy.get("label[for='nomeRua']").should("have.text", "Street");
     cy.get("label[for='numPorta']").should("have.text", "Door");
 
-    //4 - Validate if  “Search” button is present
+    //4 - Validate if  “Search” button is present and is red
     cy.get("#buttonPostalCodeSearch").contains("Search").should("be.visible");
     cy.get("#buttonPostalCodeSearch")
       .should("have.css", "background-color")
       .and("be.colored", "#DF0024");
 
-    //5 - Validate if  “Clear” button is present
+    //5 - Validate if  “Clear” button is present and is white
     cy.get("#postalCodeSearchClear").should("have.value", "Clear");
     cy.get("#postalCodeSearchClear")
       .should("have.css", "background-color")
@@ -48,7 +48,7 @@ describe(" Testing of 'Find the postcode' tab", () => {
       .should("be.visible")
       .click();
 
-    //3 - Validate the error message that is displayed Locality criteria required. Instead select District and Region
+    //3 - Validate the error message that is displayed Locality criteria required. Instead select District and Region and have red color
     cy.get("#localidade-error").should(
       "have.text",
       "Locality criteria required. Instead select District and Region."
