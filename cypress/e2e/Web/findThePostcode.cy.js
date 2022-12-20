@@ -62,22 +62,17 @@ describe(" Testing of 'Find the postcode' tab", () => {
     //1 - Validate if we are in the page of the tab with title “Find the postcode”
     cy.findThePostcode();
 
-    //2 - In the dropdown of the field District, select Porto
-    cy.get("#distritos").select("Porto").invoke("val").should("eq", "Porto");
+    //2 - In the dropdown of the field District, select a district
+    cy.district();
 
-    //3 - In the dropdown of the field Region, select Vila Nova de Gaia
-    cy.get("#concelhos")
-      .select("Vila Nova de Gaia")
-      .invoke("val")
-      .should("eq", "Vila Nova de Gaia");
+    //3 - In the dropdown of the field Region, select Va region
+    cy.region();
 
-    //4 - In the text field of Locality, write Vila Nova de Gaia
-    cy.get("#localidade")
-      .type("Vila Nova de Gaia")
-      .should("have.value", "Vila Nova de Gaia");
+    //4 - In the text field of Locality, write a locality
+    cy.locality();
 
-    //5 - In the text field of Street, write *Rua General Torres*
-    cy.get("#nomeRua").type("*Rua General Torres*");
+    //5 - In the text field of Street, write a street name
+    cy.street();
 
     //6 - Click in the Search button
     cy.get("#buttonPostalCodeSearch")

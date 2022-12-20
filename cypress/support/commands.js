@@ -29,3 +29,7 @@ export { validPostcodeFirstField } from "./validPostcodeFirstField";
 export { validPostcodeSecondField } from "./validPostcodeSecondField";
 export { invalidPostcodeFirstField } from "./invalidPostcodeFirstField";
 export { invalidPostcodeSecondField } from "./invalidPostcodeSecondField";
+export { locality } from "./locality";
+export { street } from "./street";
+export { district } from "./district";
+export { region } from "./region";
